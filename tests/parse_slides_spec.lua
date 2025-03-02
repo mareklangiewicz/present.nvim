@@ -72,7 +72,7 @@ describe("present.parse_slides", function()
       "This is the final line",
     })
 
-    -- Should only have two slides (even though only one separator)
+    -- Should have three slides due to stop comments
     eq(3, #results.slides)
 
     local slide = results.slides[1]
@@ -119,7 +119,7 @@ describe("present.parse_slides", function()
       "Same slide",
     })
 
-    -- Should only have two slides (even though only one separator)
+    -- Should have one slide even with code block containing #
     eq(1, #results.slides)
 
     local slide = results.slides[1]
